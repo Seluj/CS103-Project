@@ -2,7 +2,9 @@
 
 /**
  * @file processing.c
- * @brief Source file that contains all others functions' definition that are not related to drinks, coins or administration
+ * @brief Processing source file
+ *
+ * Source file that contains all others functions' definition that are not related to drinks, coins or administration
  * @author Jules F.
  * @date May 2022
  */
@@ -108,5 +110,13 @@ float parse_float(char str[5]) {
         return -1;
     } else {
         return strtof(str, NULL);
+    }
+}
+
+void clear_buffer() {
+    int c = 0;
+    while (c != '\n' && c != EOF)
+    {
+        c = getchar();
     }
 }

@@ -2,11 +2,12 @@
 
 /**
  * @file money.c
- * @brief Source file that contains all functions' definitions related to money
+ * @brief Money source file
+ *
+ * Source file that contains all functions' definitions related to money
  * @author Jules F.
  * @date May 2022
  */
-
 
 int coin_add(struct_user *user) {
     user->given.c05 = 0;
@@ -17,14 +18,15 @@ int coin_add(struct_user *user) {
     char str[5];
     printf("You need to insert %.0f km\n", user->d.price);
     printf("Please insert a coin (0.5, 1, 2 or 5) (0 to cancel):");
-    fflush(stdin);
-    gets(str);
+    clear_buffer();
+    fgets(str, 5, stdin);
+    str[strlen(str)-1] = '\0';
     coin = parse_float(str);
     while (coin != 0.5 && coin != 0 && coin != 1 && coin != 2 && coin != 5) {
         printf("You need to insert only 0.5, 1, 2 or 5 km coin\n");
         printf("Please insert a coin (0.5, 1, 2 or 5) (0 to cancel):");
-        fflush(stdin);
-        gets(str);
+        fgets(str, 5, stdin);
+        str[strlen(str)-1] = '\0';
         coin = parse_float(str);
     }
     if (coin == 0) {
@@ -42,14 +44,14 @@ int coin_add(struct_user *user) {
     while (sum < user->d.price) {
         printf("Left: %.1f\n", user->d.price-sum);
         printf("Please insert a coin (0.5, 1, 2 or 5) (0 to cancel):");
-        fflush(stdin);
-        gets(str);
+        fgets(str, 5, stdin);
+        str[strlen(str)-1] = '\0';
         coin = parse_float(str);
         while (coin != 0 && coin != 0.5 && coin != 1 && coin != 2 && coin != 5) {
             printf("You need to insert only 0.5, 1, 2 or 5 km coin\n");
             printf("Please insert a coin (0.5, 1, 2 or 5) (0 to cancel):");
-            fflush(stdin);
-            gets(str);
+            fgets(str, 5, stdin);
+            str[strlen(str)-1] = '\0';
             coin = parse_float(str);
         }
         if (coin == 0) {

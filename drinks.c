@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * @file drink.c
- * @brief Source file that contains all definitions of functions that are related to drinks
+ * @file drinks.c
+ * @brief Drinks source file
+ *
+ * Source file that contains all definitions of functions that are related to drinks
  * @author Jules F.
  * @date May 2022
  */
@@ -11,7 +13,8 @@
 int drink_menu(struct_drinks drink[], const int nb_drink, struct_user *user) {
     int i = 0, j = 0;
     do {
-        fflush(stdin);
+        printf("Press enter to continue\n");
+        clear_buffer();
         printf("\n\n=== Choice of drinks: ===\n");
         for (j = 0; j < nb_drink; j++) {
             printf("\t%d - ", j+1);
@@ -26,13 +29,13 @@ int drink_menu(struct_drinks drink[], const int nb_drink, struct_user *user) {
                "\t%d - Reset\n"
                "\t%d - Exit\n"
                "Choice :", j+1, j+2, j+3);
-        fflush(stdin);
         scanf("%d", &i);
     } while (i < 1 || i > j+3);
 
     if (i <= nb_drink) {
         user->d = drink[i-1];
         user->type = i-1;
+        printf("You choose %s\n", user->d.name);
     } else if (i == j+1) {
         return 1;
     } else if (i == j+2) {

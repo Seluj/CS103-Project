@@ -2,7 +2,9 @@
 
 /**
  * @file main.c
- * @brief Main file of the program, it contains only main function
+ * @brief Main file
+ *
+ * Main file of the program, it contains only main function
  * @author Jules F.
  * @date May 2022
  */

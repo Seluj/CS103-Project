@@ -2,15 +2,17 @@
 #define COFFEE_MACHINE_DRINKS_H
 
 /**
- * @file drink.h
- * @brief Header file that contains all prototypes of functions that are related to drinks
+ * @file drinks.h
+ * @brief Drinks header file
+ *
+ * Header file that contains all prototypes of functions that are related to drinks
  * @author Jules F.
  * @date May 2022
  */
 
 
 /**
- * print a menu who ask the user to enter which drink he wants
+ * Print a menu who ask the user to enter which drink he wants
  * @param drink drinks available
  * @param nb_drink number of drink available
  * @param user data of the user's drinks
@@ -19,7 +21,7 @@
 int drink_menu(struct_drinks drink[], int nb_drink, struct_user *user);
 
 /**
- * check if the drink chosen is out of stock or not
+ * Check if the drink chosen is out of stock or not
  * @param user user data
  * @return true if all OK and false if the drink is out of stock
  */
